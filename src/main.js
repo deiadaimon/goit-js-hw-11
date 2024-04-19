@@ -11,6 +11,11 @@ const form = document.querySelector('.form');
 const loader = document.querySelector('.loader');
 loader.style.display = 'none';
 const gallery = document.querySelector('.gallery');
+const lightbox = new SimpleLightbox('.gallery a', {
+    captions: true,
+    captionsData: 'alt',
+    captionDelay: 250,
+});
 
 form.addEventListener('submit', handleSubmit);
 
@@ -39,14 +44,7 @@ function handleSubmit(event) {
         })
 
         .then(data => {
-            gallery.innerHTML = ('beforeend', createGalleryMarkup(data.hits));
-
-            const lightbox = new SimpleLightbox('.gallery a', {
-                captions: true,
-                captionsData: 'alt',
-                captionDelay: 250,
-            });
-
+            gallery.innerHTML = createGalleryMarkup(data.hits);
             lightbox.refresh();
             form.reset();
         })
