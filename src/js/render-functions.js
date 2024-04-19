@@ -10,16 +10,17 @@ export function createGalleryMarkup(array) {
             downloads,
         }) => `
     <li class="gallery-card">
-        <a href="${largeImageURL}"><img class="image" src="${webformatURL}" alt="${tags}"></a>
-        <ul class="description">
-            <li><p>Likes</p>
-            <p>${likes}</p></li>
-            <li><p>Views</p>
-            <p>${views}</p></li>
-            <li><p>Comments</p>
-            <p>${comments}</p></li>
-            <li><p>Downloads</p>
-            <p>${downloads}</p></li>
+        <a class="card-link" href="${largeImageURL}">
+            <img class="image" src="${webformatURL}" alt="${tags}"></a>
+        <ul class="card-description">
+            <li><p class="name">Likes</p>
+            <p class="value">${likes}</p></liss=>
+            <li><p class="name">Views</p>
+            <p class="value">${views}</p></li>
+            <li><p class="name">Comments</p>
+            <p class="value">${comments}</p></li>
+            <li><p class="name">Downloads</p>
+            <p class="value">${downloads}</p></li>
         </ul>
     </li>
     `)

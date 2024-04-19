@@ -25,9 +25,12 @@ function handleSubmit(event) {
             loader.style.display = 'none';
             if (!data.hits.length) {
                 iziToast.error({
-                    title: 'Error',
                     message:
-                        'Sorry, there are no images matching your search query. Please try again!',
+                        'Sorry, there are no images matching your search query. Please, try again!',
+                    messageColor: '#fafafb',
+                    messageSize: '16px',
+                    messageLineHeight: '1.5',
+                    backgroundColor: '#ef4040',
                     position: 'topRight',
                 });
             }
@@ -51,11 +54,13 @@ function handleSubmit(event) {
         .catch(error => {
             loader.style.display = 'none';
             iziToast.error({
-                title: 'Error',
                 message:
-                    'Sorry, there are no images matching your search query. Please try again!',
+                    'Sorry, there are no images matching your search query. Please, try again!',
+                messageColor: '#fafafb',
+                messageSize: '16px',
+                messageLineHeight: '1.5',
+                backgroundColor: '#ef4040',
                 position: 'topRight',
-                close: false,
             });
         });
 }
